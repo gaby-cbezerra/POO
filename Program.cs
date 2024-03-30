@@ -1,8 +1,26 @@
 ﻿using System;
 
 int n = int.Parse(Console.ReadLine());
-for (int i = 1; i <= n; i++){
-if( i%2 == 0){
-Console.WriteLine($"{i}^{2} = {i*i}");
-}
-}
+
+for (int i = 0; i < n; i++){
+
+    
+    int x = int.Parse(Console.ReadLine());
+
+    if( x % 2 == 0 && x > 0){
+        Console.WriteLine("EVEN POSITIVE");
+    }
+    else if(x % 2 == 0 && x < 0 ){
+        Console.WriteLine("EVEN NEGATIVE");   
+    }
+    else if(x % 2 != 0 && x > 0){
+        Console.WriteLine("ODD POSITIVE");
+    }
+    else if( x % 2 != 0 && x < 0){
+        Console.WriteLine("ODD NEGATIVE");
+    }
+    else{
+        Console.WriteLine("NULL");
+    }
+    
+}                         

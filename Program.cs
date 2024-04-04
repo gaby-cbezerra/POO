@@ -1,29 +1,14 @@
 ﻿using System;
 
-string[] hora = Console.ReadLine().Split();
-int hInicio = int.Parse(hora[0]);
-int mInicio = int.Parse(hora[1]);
-int hFim = int.Parse(hora[2]);
-int mFim = int.Parse(hora[3]);
+int n = int.Parse(Console.ReadLine());
 
-int totalH = hFim - hInicio;
-int totalM = mFim - mInicio;
+        for (int i = 0; i < n; i++)
+        {
+            string[] valores = Console.ReadLine().Split();
+            double valor1 = double.Parse(valores[0]);
+            double valor2 = double.Parse(valores[1]);
+            double valor3 = double.Parse(valores[2]);
 
-
-if (mFim < mInicio) {
-  totalM += 60;
-  totalH--;
-}
-
-
-if (totalH < 0) {
-  totalH += 24;
-}
-
-
-if (hInicio == hFim && mInicio == mFim) {
-  Console.WriteLine("O JOGO DUROU 24 HORA(S) E 0 MINUTO(S)");
-} else {
-  Console.WriteLine("O JOGO DUROU " + totalH + " HORA(S) E " + totalM + " MINUTO(S)");
-}
-
+            double media = (valor1 * 2 + valor2 * 3 + valor3 * 5) / 10;
+            Console.WriteLine(media.ToString("F1"));
+        }  

@@ -1,61 +1,29 @@
 ﻿using System;
 
-string n1 = Console.ReadLine();
-string n2 = Console.ReadLine();
-string n3 = Console.ReadLine();
-    if ( n1 == "vertebrado"){
-        if(n2 == "ave"){
-            if(n3 == "carnivoro"){
-                Console.WriteLine("aguia");
-            }
-        }
-    }
-    if ( n1 == "vertebrado"){
-        if(n2 == "ave"){
-            if(n3 == "onivoro"){
-                Console.WriteLine("pomba");
-            }
-        }
-    }
-    if ( n1 == "vertebrado"){
-        if(n2 == "mamifero"){
-            if(n3 == "onivoro"){
-                Console.WriteLine("homem");
-            }
-        }
-    }
-    if ( n1 == "vertebrado"){
-        if(n2 == "mamifero"){
-            if(n3 == "herbivoro"){
-                Console.WriteLine("vaca");
-            }
-        }
-    }
-    if ( n1 == "invertebrado"){
-        if(n2 == "inseto"){
-            if(n3 == "hematofago"){
-                Console.WriteLine("pulga");
-            }
-        }
-    }
-    if ( n1 == "invertebrado"){
-        if(n2 == "inseto"){
-            if(n3 == "herbivoro"){
-                Console.WriteLine("lagarta");
-            }
-        }
-    }
-    if ( n1 == "invertebrado"){
-        if(n2 == "anelideo"){
-            if(n3 == "hematofago"){
-                Console.WriteLine("sanguessuga");
-            }
-        }
-    }
-    if ( n1 == "invertebrado"){
-        if(n2 == "anelideo"){
-            if(n3 == "onivoro"){
-                Console.WriteLine("minhoca");
-            }
-        }
-    }
+string[] hora = Console.ReadLine().Split();
+int hInicio = int.Parse(hora[0]);
+int mInicio = int.Parse(hora[1]);
+int hFim = int.Parse(hora[2]);
+int mFim = int.Parse(hora[3]);
+
+int totalH = hFim - hInicio;
+int totalM = mFim - mInicio;
+
+
+if (mFim < mInicio) {
+  totalM += 60;
+  totalH--;
+}
+
+
+if (totalH < 0) {
+  totalH += 24;
+}
+
+
+if (hInicio == hFim && mInicio == mFim) {
+  Console.WriteLine("O JOGO DUROU 24 HORA(S) E 0 MINUTO(S)");
+} else {
+  Console.WriteLine("O JOGO DUROU " + totalH + " HORA(S) E " + totalM + " MINUTO(S)");
+}
+
